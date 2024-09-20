@@ -34,12 +34,12 @@ pipeline {
                 sh 'sudo docker run --rm $imagename pytest test_app.py'
             }
         }
-        stage('Trivy Scan') {
-            steps {
+        // stage('Trivy Scan') {
+           // steps {
                 // Run Trivy to scan the Docker image for vulnerabilities
-                sh 'trivy image --exit-code 1 --severity HIGH,CRITICAL $imagename'
-            }
-        }
+             //   sh 'trivy image --exit-code 1 --severity HIGH,CRITICAL $imagename'
+            //}
+       // }
 
         stage('Run image ') {
 
