@@ -5,6 +5,7 @@ WORKDIR /backend
 RUN pip3 install flask
 RUN pip3 install pymysql
 RUN pip3 install flask-cors
+RUN pip3 install pytest
 
 COPY . .
 
