@@ -1,3 +1,4 @@
 pip install flask
 pip install pymysql
 pip install flask-cors
+pip install pytest
