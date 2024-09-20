@@ -34,6 +34,19 @@ pipeline {
                 sh 'sudo docker run --rm $imagename pytest test_app.py'
             }
         }
+        
+        // stage('Run Tests') {
+           // steps {
+            // script {
+                // def testResult = sh(script: 'sudo docker run --rm $imagename pytest test_app.py', returnStatus: true)
+                // if (testResult != 0) {
+                      // currentBuild.result = 'FAILURE'
+                      // return // Exit if tests fail
+                 //}
+              //}
+            //}
+         //}
+        
         // stage('Trivy Scan') {
            // steps {
                 // Run Trivy to scan the Docker image for vulnerabilities
