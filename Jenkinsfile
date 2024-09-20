@@ -17,7 +17,7 @@ pipeline {
         }
 
 
-        stage('Build image and Run image ') {
+        stage('Build image') {
 
             steps{
                 sh 'sudo su - jenkins -s/bin/bash'
@@ -28,6 +28,11 @@ pipeline {
 
             }
 
+        }
+        stage('Run Tests') {
+            steps {
+                sh 'sudo docker run --rm $imagename pytest test_app.py'
+            }
         }
         
         stage('Run image ') {
