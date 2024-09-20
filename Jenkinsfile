@@ -38,6 +38,10 @@ pipeline {
         stage('Run image ') {
 
             steps{
+                // Stop and remove any existing container with the same name
+                sh 'sudo docker stop $imagename || true' // Ignore error if container isn't running
+                sh 'sudo docker rm $imagename || true'   // Ignore error if no container exists
+                // Run the Flask application
                 sh 'sudo docker run -p5000:5000 --restart=always --name $imagename  -itd $imagename'
 
             }
